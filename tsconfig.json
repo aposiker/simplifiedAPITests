@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "module": "commonjs",
+        "outDir": "built",
+        "target": "ES2019",
+        "sourceMap": true,
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "framework",
+        "specs",
+        "config"   
+    ]
+}
