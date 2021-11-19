@@ -2,13 +2,13 @@ import { APIclient } from '../framework/apiClient'
 
 describe('Basic API test', () => {
   let authorizedAPIclient: APIclient
-  before(async function () {
+  before('suite setup', async function () {
     authorizedAPIclient = await APIclient.loginViaUserCreds(
       'JohnDoe',
       'password'
     )
   })
-  beforeEach(async function () {
+  beforeEach('test setup', async function () {
     await authorizedAPIclient.user.createUser({
       id: Date.now(),
       username: 'johndoe',
@@ -20,7 +20,7 @@ describe('Basic API test', () => {
       userStatus: 0
     })
   })
-  after(async function () {
+  after('suite tear down', async function () {
     await authorizedAPIclient.user.deleteUser('johndoe')
   })
 
